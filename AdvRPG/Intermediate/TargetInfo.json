@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "AdvRPG",
+			"Path": "D:\\Development\\SourceTree\\Unreal_AdvRPG\\AdvRPG\\Source\\AdvRPG.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "AdvRPGEditor",
+			"Path": "D:\\Development\\SourceTree\\Unreal_AdvRPG\\AdvRPG\\Source\\AdvRPGEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

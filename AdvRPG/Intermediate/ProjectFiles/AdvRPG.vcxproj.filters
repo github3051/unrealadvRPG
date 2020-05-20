@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\AdvRPG.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{CAFDDAA9-BBB0-4C92-B509-F56C1580A6CB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\AdvRPG.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\AdvRPGEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{0EBF9728-34B1-4FA7-B8EB-FCE18C76152B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\AdvRPG">
+      <UniqueIdentifier>{D1CE5E72-0D3F-4B6A-9931-20A3FAB897AF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\AdvRPG\AdvRPG.Build.cs">
+      <Filter>Source\AdvRPG</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\AdvRPG\AdvRPG.cpp">
+      <Filter>Source\AdvRPG</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AdvRPG\AdvRPG.h">
+      <Filter>Source\AdvRPG</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AdvRPG\AdvRPGCharacter.cpp">
+      <Filter>Source\AdvRPG</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AdvRPG\AdvRPGCharacter.h">
+      <Filter>Source\AdvRPG</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AdvRPG\AdvRPGGameMode.cpp">
+      <Filter>Source\AdvRPG</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AdvRPG\AdvRPGGameMode.h">
+      <Filter>Source\AdvRPG</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
