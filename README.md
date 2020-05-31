@@ -1,6 +1,7 @@
 # Unreal_AdvRPG
 - Unreal Adventure RPG Game (Only Cpp)
 - Version 4.25.0 (start)
+- gitignore : Unreal
 ### Trello (private) : https://trello.com/b/xBQusI2R/unreal-adventure-rpg
 ---
 ## 5월(May)
