@@ -1,2 +1,2 @@
-D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Development\AdvRPG\Definitions.AdvRPG.h
-d:\development\sourcetree\unreal_advrpg\advrpg\source\advrpg\AdvRPG.h
+C:\SourceTree\UnrealAdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Development\AdvRPG\Definitions.AdvRPG.h
+c:\sourcetree\unrealadvrpg\advrpg\source\advrpg\AdvRPG.h

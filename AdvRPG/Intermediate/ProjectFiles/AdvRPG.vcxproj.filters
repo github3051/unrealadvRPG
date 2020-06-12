@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\AdvRPG.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{CAFDDAA9-BBB0-4C92-B509-F56C1580A6CB}</UniqueIdentifier>
+      <UniqueIdentifier>{699204EA-F723-491C-B1A5-EDC90E9047F2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AdvRPG.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{0EBF9728-34B1-4FA7-B8EB-FCE18C76152B}</UniqueIdentifier>
+      <UniqueIdentifier>{63FCE3C6-38CD-41B5-A653-7F2B88BFF5E2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\AdvRPG">
-      <UniqueIdentifier>{D1CE5E72-0D3F-4B6A-9931-20A3FAB897AF}</UniqueIdentifier>
+      <UniqueIdentifier>{A4DB5DDB-CE34-4D14-9B65-EEDB8162D80E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\AdvRPG\AdvRPG.Build.cs">
       <Filter>Source\AdvRPG</Filter>
@@ -53,5 +53,20 @@
     <ClInclude Include="..\..\Source\AdvRPG\AdvRPGGameMode.h">
       <Filter>Source\AdvRPG</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source\AdvRPG\SungHoon">
+      <UniqueIdentifier>{755b9727-9b34-4ebc-9188-0bced7a18f5c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\AdvRPG\SungHoon\Fountain.h">
+      <Filter>Source\AdvRPG\SungHoon</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\AdvRPG\SungHoon\Fountain.cpp">
+      <Filter>Source\AdvRPG\SungHoon</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

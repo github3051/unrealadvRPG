@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\Development\\SourceTree\\Unreal_AdvRPG\\AdvRPG\\Source\\AdvRPG\\AdvRPG.Build.cs",
-		"D:\\Development\\SourceTree\\Unreal_AdvRPG\\AdvRPG\\Source\\AdvRPG.Target.cs",
-		"D:\\Development\\SourceTree\\Unreal_AdvRPG\\AdvRPG\\Source\\AdvRPGEditor.Target.cs"
+		"C:\\SourceTree\\UnrealAdvRPG\\AdvRPG\\Source\\AdvRPG\\AdvRPG.Build.cs",
+		"C:\\SourceTree\\UnrealAdvRPG\\AdvRPG\\Source\\AdvRPG.Target.cs",
+		"C:\\SourceTree\\UnrealAdvRPG\\AdvRPG\\Source\\AdvRPGEditor.Target.cs"
 	],
 	"EngineVersion": "4.25.1"
 }

@@ -2,7 +2,8 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+//#include "CoreMinimal.h"
+#include "AdvRPG.h" // Log Test (by SungHoon)
 #include "GameFramework/GameModeBase.h"
 #include "AdvRPGGameMode.generated.h"
 

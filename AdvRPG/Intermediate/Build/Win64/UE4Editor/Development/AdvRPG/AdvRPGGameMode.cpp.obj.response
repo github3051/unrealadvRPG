@@ -32,16 +32,14 @@
 /wd4244
 /wd4838
 /I .
-/I D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Inc\AdvRPG
-/I D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Source
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime
+/I Runtime\Engine\Classes
+/I Runtime\Engine\Public
 /I Runtime\TraceLog\Public
 /I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\CoreUObject
 /I Runtime\CoreUObject\Public
-/I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
-/I Runtime\Engine\Classes
-/I Runtime\Engine\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\NetCore
 /I Runtime\Net
 /I Runtime\Net\Core\Classes
@@ -232,6 +230,8 @@
 /I Runtime\Experimental\GeometryCollectionSimulationCore\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
+/I C:\SourceTree\UnrealAdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Inc\AdvRPG
+/I C:\SourceTree\UnrealAdvRPG\AdvRPG\Source
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ThirdParty\PhysX3\PxShared\include
@@ -263,12 +263,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"
-/FI"D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Intermediate\Build\Win64\AdvRPGEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Intermediate\Build\Win64\AdvRPGEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Intermediate\Build\Win64\AdvRPGEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Source\AdvRPG\AdvRPGGameMode.cpp"
-/FI"D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Development\AdvRPG\Definitions.AdvRPG.h"
-/Fo"D:\Development\SourceTree\Unreal_AdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Development\AdvRPG\AdvRPGGameMode.cpp.obj"
+/FI"C:\SourceTree\UnrealAdvRPG\AdvRPG\Intermediate\Build\Win64\AdvRPGEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\SourceTree\UnrealAdvRPG\AdvRPG\Intermediate\Build\Win64\AdvRPGEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\SourceTree\UnrealAdvRPG\AdvRPG\Intermediate\Build\Win64\AdvRPGEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\SourceTree\UnrealAdvRPG\AdvRPG\Source\AdvRPG\AdvRPGGameMode.cpp"
+/FI"C:\SourceTree\UnrealAdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Development\AdvRPG\Definitions.AdvRPG.h"
+/Fo"C:\SourceTree\UnrealAdvRPG\AdvRPG\Intermediate\Build\Win64\UE4Editor\Development\AdvRPG\AdvRPGGameMode.cpp.obj"
 /TP
 /GR-
 /W4
