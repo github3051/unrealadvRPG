@@ -7,7 +7,7 @@
 AAdvRPGGameMode::AAdvRPGGameMode()
 {
 	// Log Test (by SungHoon)
-	UE_LOG(LogBySH, Error, TEXT("TEST!"));
+	UE_LOG(LogBySH, Error, TEXT("Execute GameMode Constructor!"));
 
 	// set default pawn class to our Blueprinted character
 	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/ThirdPersonCPP/Blueprints/ThirdPersonCharacter"));
