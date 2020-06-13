@@ -75,7 +75,7 @@ DerivedDataCache/*
 
 
 # Added by Hoon
-/Saved
-/Intermediate
-/.vs
-/Build
+/AdvRPG/Saved
+/AdvRPG/Intermediate
+/AdvRPG/.vs
+/AdvRPG/Build
