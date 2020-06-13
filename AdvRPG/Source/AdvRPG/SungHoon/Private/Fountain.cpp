@@ -29,8 +29,8 @@ AFountain::AFountain()
 	///
 
 	/// Log test
-	UE_LOG(LogBySH, Error, TEXT("LogBySH, Execute AFountain's Constructor"));
-	UE_LOG(LogTemp, Error, TEXT("LogTemp, Execute AFountain's Constructor"));
+	UE_LOG(LogBySH, Warning, TEXT("LogBySH, Execute AFountain's Constructor that set in level in advance"));
+	UE_LOG(LogTemp, Warning, TEXT("LogTemp, Execute AFountain's Constructor that set in level in advance"));
 }
 
 void AFountain::PreInitializeComponents()
