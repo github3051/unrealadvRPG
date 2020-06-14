@@ -35,6 +35,15 @@ AHPawn::AHPawn()
 		"/Game/Mannequin/Character/Mesh/SK_Mannequin.SK_Mannequin"));
 	if (TEMP.Succeeded())
 		Mesh->SetSkeletalMesh(TEMP.Object);
+
+	// Mesh에 애니메이션 등록
+	Mesh->SetAnimationMode(EAnimationMode::AnimationBlueprint);
+	// 애니메이션 블루프린트 클래스 정보 가져옴
+	static ConstructorHelpers::FClassFinder<UAnimInstance> TEMP_ANIM(TEXT(
+		"/Game/SungHoon/Animations/HAnimBlueprint.HAnimBlueprint_C"));
+	if (TEMP_ANIM.Succeeded())
+		Mesh->SetAnimInstanceClass(TEMP_ANIM.Class); // Mesh의 애님 인스턴스에 BP 클래스 정보 지정.
+
 }
 
 // Called when the game starts or when spawned
