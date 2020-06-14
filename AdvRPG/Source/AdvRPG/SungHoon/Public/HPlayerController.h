@@ -15,6 +15,8 @@ class ADVRPG_API AHPlayerController : public APlayerController
 	GENERATED_BODY()
 
 	AHPlayerController();
+protected:
+	virtual void BeginPlay() override;
 
 public:
 	// Event function
