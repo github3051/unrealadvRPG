@@ -13,9 +13,12 @@ AHPawn::AHPawn()
 	// new assigned
 	Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CAPSULE"));
 	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("MESH"));
-	Movement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("MOVEMENT"));
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SPRINGARM"));
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("CAMERA"));
+	
+	// FloatingPawnMovement 사용할 예정. (중력 적용x)
+	Movement = CreateDefaultSubobject<UFloatingPawnMovement>(TEXT("MOVEMENT"));
+	Movement->MaxSpeed = 1500.0f;
 
 	// Inherited Object
 	RootComponent = Capsule; // Needed #include "Components/CapsuleComponent.h"
@@ -43,7 +46,7 @@ AHPawn::AHPawn()
 		"/Game/SungHoon/Animations/HAnimBlueprint.HAnimBlueprint_C"));
 	if (TEMP_ANIM.Succeeded())
 		Mesh->SetAnimInstanceClass(TEMP_ANIM.Class); // Mesh의 애님 인스턴스에 BP 클래스 정보 지정.
-
+	
 }
 
 // Called when the game starts or when spawned
@@ -87,6 +90,7 @@ void AHPawn::UpDown(float NewAxisValue)
 {
 	//UE_LOG(LogTemp, Warning, TEXT("UpDown : %f"), NewAxisValue);
 	AddMovementInput(GetActorForwardVector(), NewAxisValue);
+
 }
 
 void AHPawn::LeftRight(float NewAxisValue)
