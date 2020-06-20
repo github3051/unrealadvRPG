@@ -74,8 +74,13 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 
-# Added by Hoon
-/AdvRPG/Saved
-/AdvRPG/Intermediate
-/AdvRPG/.vs
-/AdvRPG/Build
+##### Added by Hoon #####
+# AdvRPG/Saved 하위의 모든 파일 제외
+AdvRPG/Saved
+# AdvRPG/Intermediate 하위의 모든 파일 제외
+AdvRPG/Intermediate
+# AdvRPG/.vs 하위의 모든 파일 제외
+AdvRPG/.vs
+# AdvRPG/Build 하위의 모든 파일 제외
+AdvRPG/Build
+!AdvRPG/Saved/Config/*
