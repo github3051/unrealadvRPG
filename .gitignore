@@ -84,3 +84,5 @@ AdvRPG/.vs
 # AdvRPG/Build 하위의 모든 파일 제외
 AdvRPG/Build
 !AdvRPG/Saved/Config/*
+# AdvRPG/Binaries/ 모든 파일 제외
+AdvRPG/Binaries/
