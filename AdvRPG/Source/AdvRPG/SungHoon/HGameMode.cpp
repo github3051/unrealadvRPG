@@ -5,11 +5,13 @@
 #include "Public/HPawn.h" // for default Pawn class
 #include "Public/HPlayerController.h" // for PlayerController
 //#include "../AdvRPGCharacter.h" // default Cpp third person character
+#include "Public/HCharacter.h"
 
 AHGameMode::AHGameMode()
 {
 	// set (defalut) pawn class for HPawn made Hoon
-	DefaultPawnClass = AHPawn::StaticClass();
+	//DefaultPawnClass = AHPawn::StaticClass();
+	DefaultPawnClass = AHCharacter::StaticClass();
 
 #pragma region Used BP Character Method
 	/*static ConstructorHelpers::FClassFinder<APawn> BP_PAWN_C(TEXT(
@@ -18,7 +20,6 @@ AHGameMode::AHGameMode()
 		DefaultPawnClass = BP_PAWN_C.Class;*/
 #pragma endregion
 		
-
 	// set Player controller made Hoon
 	PlayerControllerClass = AHPlayerController::StaticClass();
 
