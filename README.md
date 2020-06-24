@@ -1,6 +1,6 @@
 # Unreal_AdvRPG
 - Unreal Adventure RPG Game (Only Cpp)
-- Version 4.25.0 (start)
+- Version 4.25.0 (start) / current 4.25.1
 - gitignore : Unreal
 
 # Features
@@ -17,7 +17,7 @@
 ---
 ## 6월(June)
 - 0601 마지막 점검 및 프로젝트 시작
-- 0608 1st.움직임 & 엔진 4.25.1 업데이트
+- 0608 1st.움직임 (ver 4.25.1 업데이트)
 - 0615 2nd.움직임2
 - 0622 휴식
 - 0629 캐릭터 적용(Animation)
