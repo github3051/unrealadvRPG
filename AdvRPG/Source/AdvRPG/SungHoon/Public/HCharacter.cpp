@@ -31,8 +31,11 @@ AHCharacter::AHCharacter()
 
 	// Added Animation to Mesh
 	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
+	/*static ConstructorHelpers::FClassFinder<UAnimInstance> COUNTESS_ANIM(TEXT(
+		"/Game/ParagonCountess/Characters/Heroes/Countess/Countess_AnimBlueprint.Countess_AnimBlueprint_C"));*/
+	// Found Anim Instance object
 	static ConstructorHelpers::FClassFinder<UAnimInstance> COUNTESS_ANIM(TEXT(
-		"/Game/ParagonCountess/Characters/Heroes/Countess/Countess_AnimBlueprint.Countess_AnimBlueprint_C"));
+		"/Game/SungHoon/Animations/HAnimBlueprint.HAnimBlueprint_C"));
 	if (COUNTESS_ANIM.Succeeded())
 		GetMesh()->SetAnimInstanceClass(COUNTESS_ANIM.Class);
 }
