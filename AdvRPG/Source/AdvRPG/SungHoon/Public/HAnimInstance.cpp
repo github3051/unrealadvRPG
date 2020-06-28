@@ -39,8 +39,8 @@ void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 void UHAnimInstance::PlayDodgeMontage()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Play Dodge Montage"));
-
-	if (!Montage_IsPlaying(DodgeMontage))
+	
+	if (!bIsInAir && !Montage_IsPlaying(DodgeMontage))
 	{
 		Montage_Play(DodgeMontage, 1.0f);
 	}

@@ -43,7 +43,7 @@ AHCharacter::AHCharacter()
 	}
 
 	// Modified Jump Speed
-	GetCharacterMovement()->JumpZVelocity = 800.0f;
+	GetCharacterMovement()->JumpZVelocity = 550.0f;
 
 }
 
@@ -99,6 +99,7 @@ void AHCharacter::Turn(float NewAxisValue)
 
 void AHCharacter::Dodge()
 {
+	UE_LOG(LogTemp, Warning, TEXT("Dodge"));
 	auto AnimInstance = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
 	if (AnimInstance == nullptr) return;
 
