@@ -4,7 +4,7 @@
 #include "HGameMode.h"
 #include "Public/HPawn.h" // for default Pawn class
 #include "Public/HPlayerController.h" // for PlayerController
-//#include "../AdvRPGCharacter.h" // default Cpp third person character
+ 
 #include "Public/HCharacter.h"
 
 AHGameMode::AHGameMode()

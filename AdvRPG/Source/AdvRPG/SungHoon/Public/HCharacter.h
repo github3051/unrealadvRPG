@@ -3,11 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Character.h"
-#include "GameFramework/CharacterMovementComponent.h"
-#include "GameFramework/SpringArmComponent.h"
-#include "Camera/CameraComponent.h"
-#include "HAnimInstance.h"
+#include "GameFramework/SpringArmComponent.h" // for USpringArmComponent
+#include "Camera/CameraComponent.h" // for UCameraComponent
+#include "GameFramework/Character.h" // for SetupPlayerInputComponent
 
 #include "HCharacter.generated.h"
 

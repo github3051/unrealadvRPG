@@ -3,9 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
-#include "GameFramework/Character.h" // for ACharacter
-#include "GameFramework/PawnMovementComponent.h" // for GetMovementComponent
+#include "Animation/AnimInstance.h" // for UAnimMontage & NativeUpdateAnimation
 
 #include "HAnimInstance.generated.h"
 

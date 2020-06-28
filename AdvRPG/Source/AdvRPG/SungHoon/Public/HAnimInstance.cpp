@@ -2,6 +2,8 @@
 
 
 #include "HAnimInstance.h"
+#include "GameFramework/Character.h" // for ACharacter
+#include "GameFramework/PawnMovementComponent.h" // for GetMovementComponent
 
 UHAnimInstance::UHAnimInstance()
 {

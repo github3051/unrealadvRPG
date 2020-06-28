@@ -2,6 +2,9 @@
 
 #include "HCharacter.h"
 
+#include "GameFramework/CharacterMovementComponent.h"
+#include "HAnimInstance.h"
+
 // Sets default values
 AHCharacter::AHCharacter()
 {
