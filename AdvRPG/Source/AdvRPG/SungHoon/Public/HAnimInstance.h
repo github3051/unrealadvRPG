@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
+#include "GameFramework/Character.h" // for ACharacter
+#include "GameFramework/PawnMovementComponent.h" // for GetMovementComponent
 #include "HAnimInstance.generated.h"
 
 /**
@@ -21,5 +23,8 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
-	float mCurrentPawnSpeed;
+	float CurrentPawnSpeed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
+	bool bIsInAir;
 };

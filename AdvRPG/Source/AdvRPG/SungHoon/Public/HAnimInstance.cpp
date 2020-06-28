@@ -5,7 +5,8 @@
 
 UHAnimInstance::UHAnimInstance()
 {
-	mCurrentPawnSpeed = 0.0f;
+	CurrentPawnSpeed = 0.0f;
+	bIsInAir = false;
 }
 
 void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -16,6 +17,12 @@ void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	auto Pawn = TryGetPawnOwner();
 	if (::IsValid(Pawn))
 	{
-		mCurrentPawnSpeed = Pawn->GetVelocity().Size();
+		CurrentPawnSpeed = Pawn->GetVelocity().Size();
+
+		auto Character = Cast<ACharacter>(Pawn);
+		if (Character)
+		{
+			bIsInAir = Character->GetMovementComponent()->IsFalling();
+		}
 	}
 }

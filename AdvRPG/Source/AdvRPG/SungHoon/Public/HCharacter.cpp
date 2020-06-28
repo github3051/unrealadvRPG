@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "HCharacter.h"
 
 // Sets default values
@@ -33,11 +32,13 @@ AHCharacter::AHCharacter()
 	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
 	/*static ConstructorHelpers::FClassFinder<UAnimInstance> COUNTESS_ANIM(TEXT(
 		"/Game/ParagonCountess/Characters/Heroes/Countess/Countess_AnimBlueprint.Countess_AnimBlueprint_C"));*/
-	// Found Anim Instance object
+		// Found Anim Instance object
 	static ConstructorHelpers::FClassFinder<UAnimInstance> COUNTESS_ANIM(TEXT(
 		"/Game/SungHoon/Animations/HAnimBlueprint.HAnimBlueprint_C"));
 	if (COUNTESS_ANIM.Succeeded())
 		GetMesh()->SetAnimInstanceClass(COUNTESS_ANIM.Class);
+
+	GetCharacterMovement()->JumpZVelocity = 800.0f;
 }
 
 // Called when the game starts or when spawned
@@ -63,6 +64,8 @@ void AHCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("HLeftRight"), this, &AHCharacter::LeftRight);
 	PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &AHCharacter::LookUp);
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &AHCharacter::Turn);
+
+	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &AHCharacter::Jump);
 }
 
 void AHCharacter::UpDown(float NewAxisValue)
