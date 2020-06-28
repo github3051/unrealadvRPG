@@ -26,7 +26,9 @@ AHCharacter::AHCharacter()
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> COUNTESS(TEXT(
 		"/Game/ParagonCountess/Characters/Heroes/Countess/Meshes/SM_Countess.SM_Countess"));
 	if (COUNTESS.Succeeded())
+	{
 		GetMesh()->SetSkeletalMesh(COUNTESS.Object);
+	}
 
 	// Added Animation to Mesh
 	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
@@ -36,9 +38,13 @@ AHCharacter::AHCharacter()
 	static ConstructorHelpers::FClassFinder<UAnimInstance> COUNTESS_ANIM(TEXT(
 		"/Game/SungHoon/Animations/HAnimBlueprint.HAnimBlueprint_C"));
 	if (COUNTESS_ANIM.Succeeded())
+	{
 		GetMesh()->SetAnimInstanceClass(COUNTESS_ANIM.Class);
+	}
 
+	// Modified Jump Speed
 	GetCharacterMovement()->JumpZVelocity = 800.0f;
+
 }
 
 // Called when the game starts or when spawned
@@ -66,6 +72,7 @@ void AHCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("Turn"), this, &AHCharacter::Turn);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &AHCharacter::Jump);
+	PlayerInputComponent->BindAction(TEXT("Dodge"), EInputEvent::IE_Pressed, this, &AHCharacter::Dodge);
 }
 
 void AHCharacter::UpDown(float NewAxisValue)
@@ -90,3 +97,10 @@ void AHCharacter::Turn(float NewAxisValue)
 	AddControllerYawInput(NewAxisValue);
 }
 
+void AHCharacter::Dodge()
+{
+	auto AnimInstance = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
+	if (AnimInstance == nullptr) return;
+
+	AnimInstance->PlayDodgeMontage();
+}

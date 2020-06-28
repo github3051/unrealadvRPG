@@ -7,6 +7,15 @@ UHAnimInstance::UHAnimInstance()
 {
 	CurrentPawnSpeed = 0.0f;
 	bIsInAir = false;
+
+	// Added Dodge Montage
+	static ConstructorHelpers::FObjectFinder<UAnimMontage> DODGE_MONTAGE(TEXT(
+		"/Game/SungHoon/Animations/HDodgeForward_Montage.HDodgeForward_Montage"));
+	
+	if (DODGE_MONTAGE.Succeeded())
+	{
+		DodgeMontage = DODGE_MONTAGE.Object;
+	}
 }
 
 void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -24,5 +33,15 @@ void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		{
 			bIsInAir = Character->GetMovementComponent()->IsFalling();
 		}
+	}
+}
+
+void UHAnimInstance::PlayDodgeMontage()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Play Dodge Montage"));
+
+	if (!Montage_IsPlaying(DodgeMontage))
+	{
+		Montage_Play(DodgeMontage, 1.0f);
 	}
 }

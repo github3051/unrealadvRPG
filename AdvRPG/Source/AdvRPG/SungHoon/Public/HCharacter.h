@@ -7,6 +7,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "HAnimInstance.h"
+
 #include "HCharacter.generated.h"
 
 UCLASS()
@@ -14,7 +16,7 @@ class ADVRPG_API AHCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-/// Member Functions
+		/// Member Functions
 public:
 	// Sets default values for this character's properties
 	AHCharacter();
@@ -35,8 +37,9 @@ private:
 	void LookUp(float NewAxisValue);
 	void Turn(float NewAxisValue);
 
-/// Member Variables
+	void Dodge();
 
+	/// Member Variables
 	// ※ coding standard : public 변수는 m을 붙이지 않는다.
 public:
 	// Added Hoon
@@ -44,5 +47,4 @@ public:
 		USpringArmComponent* SpringArm;
 	UPROPERTY(VisibleAnywhere, Category = CAMERA)
 		UCameraComponent* Camera;
-
 };
