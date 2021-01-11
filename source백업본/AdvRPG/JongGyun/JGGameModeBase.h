@@ -15,7 +15,8 @@ class ADVRPG_API AJGGameModeBase : public AGameModeBase
 	GENERATED_BODY()
 
 	AJGGameModeBase();
-	
+
 public:
 	virtual void PostLogin(APlayerController* NewPlayer) override;
+	
 };

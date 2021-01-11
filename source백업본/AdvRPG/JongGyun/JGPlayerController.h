@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "EngineMinimal.h"
+#include "AdvRPG/AdvRPG.h"
 #include "GameFramework/PlayerController.h"
 #include "JGPlayerController.generated.h"
 
@@ -16,8 +16,5 @@ class ADVRPG_API AJGPlayerController : public APlayerController
 
 public:
 	virtual void PostInitializeComponents() override;
-	virtual void OnPossess(APawn* aPawn) override;
-
-protected:
-	virtual void BeginPlay() override;
+	//virtual void Possess(APawn* aPawn) override;
 };

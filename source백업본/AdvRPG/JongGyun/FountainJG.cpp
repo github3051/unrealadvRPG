@@ -1,10 +1,10 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #pragma once
 
-#include "FountainJG.h"
 #include "EngineMinimal.h"
 #include "GameFramework/Actor.h"
 
+#include "FountainJG.h"
 
 // Sets default values
 AFountainJG::AFountainJG()
