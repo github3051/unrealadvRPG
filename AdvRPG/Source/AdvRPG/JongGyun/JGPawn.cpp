@@ -34,7 +34,7 @@ AJGPawn::AJGPawn()
 
 	Mesh->SetAnimationMode(EAnimationMode::AnimationBlueprint);
 
-	static ConstructorHelpers::FClassFinder<UAnimInstance> Countess_Anim(TEXT("/Game/ParagonCountess/Characters/Heroes/Countess/Countess_AnimBlueprint.Countess_AnimBlueprint"));
+	static ConstructorHelpers::FClassFinder<UAnimInstance> Countess_Anim(TEXT("/Game/JongGyun/Animation/JGAnim_BP.JGAnim_BP"));
 	if (Countess_Anim.Succeeded())
 	{
 		Mesh->SetAnimInstanceClass(Countess_Anim.Class);
@@ -46,12 +46,12 @@ AJGPawn::AJGPawn()
 void AJGPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	Mesh->SetAnimationMode(EAnimationMode::AnimationSingleNode);
-	UAnimationAsset* AnimAsset = LoadObject<UAnimationAsset>(nullptr, TEXT("/Game/ParagonCountess/Characters/Heroes/Countess/Animations/Jog_Fwd.Jog_Fwd"));
-	if (AnimAsset != nullptr)
-	{
-		Mesh->PlayAnimation(AnimAsset, true);
-	}
+	//Mesh->SetAnimationMode(EAnimationMode::AnimationSingleNode);
+	//UAnimationAsset* AnimAsset = LoadObject<UAnimationAsset>(nullptr, TEXT("/Game/ParagonCountess/Characters/Heroes/Countess/Animations/Jog_Fwd.Jog_Fwd"));
+	//if (AnimAsset != nullptr)
+	//{
+	//	Mesh->PlayAnimation(AnimAsset, true);
+	//}
 	
 }
 
@@ -78,8 +78,8 @@ void AJGPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis(TEXT("UpDown"), this, &AJGPawn::UpDown);
-	PlayerInputComponent->BindAxis(TEXT("LeftRight"), this, &AJGPawn::LeftRight);
+	PlayerInputComponent->BindAxis(TEXT("HUpDown"), this, &AJGPawn::UpDown);
+	PlayerInputComponent->BindAxis(TEXT("HLeftRight"), this, &AJGPawn::LeftRight);
 
 }
 

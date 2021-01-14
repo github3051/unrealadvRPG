@@ -3,6 +3,11 @@
 
 #include "JGPlayerController.h"
 
+AJGPlayerController::AJGPlayerController()
+{
+	//Log
+}
+
 void AJGPlayerController::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();

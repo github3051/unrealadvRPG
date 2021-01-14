@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "AdvRPG/AdvRPG.h"
+#include "../AdvRPG.h"
 #include "GameFramework/GameModeBase.h"
 #include "JGGameModeBase.generated.h"
 
@@ -14,6 +14,7 @@ class ADVRPG_API AJGGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 
+public:
 	AJGGameModeBase();
 	
 public:

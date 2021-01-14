@@ -13,6 +13,7 @@ UCLASS()
 class ADVRPG_API AJGPlayerController : public APlayerController
 {
 	GENERATED_BODY()
+	AJGPlayerController();
 
 public:
 	virtual void PostInitializeComponents() override;

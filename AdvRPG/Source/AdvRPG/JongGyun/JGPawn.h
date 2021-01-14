@@ -3,10 +3,12 @@
 #pragma once
 
 //#include "EngineMinimal.h"
-#include "EngineMinimal.h"
+#include "../AdvRPG.h"
 #include "GameFramework/Pawn.h"
 #include "GameFramework/FloatingPawnMovement.h"
 #include "JGPawn.generated.h"
+
+
 
 UCLASS()
 class ADVRPG_API AJGPawn : public APawn
@@ -24,6 +26,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
 	virtual void PostInitializeComponents() override;
 	virtual void PossessedBy(AController* NewController) override;
 

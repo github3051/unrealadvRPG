@@ -3,11 +3,13 @@
 
 #include "JGGameModeBase.h"
 #include "JGPawn.h"
+#include "JGCharacter.h"
 #include "JGPlayerController.h"
 
 AJGGameModeBase::AJGGameModeBase()
 {
-	DefaultPawnClass = AJGPawn::StaticClass();
+	//DefaultPawnClass = AJGPawn::StaticClass();
+	DefaultPawnClass = AJGCharacter::StaticClass();
 	PlayerControllerClass = AJGPlayerController::StaticClass();
 }
 

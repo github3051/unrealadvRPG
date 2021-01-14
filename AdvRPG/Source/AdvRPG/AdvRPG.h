@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "EngineMinimal.h"
 
 // Sunghoon's log
 DECLARE_LOG_CATEGORY_EXTERN(LogBySH, Log, All);
