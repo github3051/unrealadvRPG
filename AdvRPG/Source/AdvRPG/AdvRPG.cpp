@@ -7,3 +7,5 @@ IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, AdvRPG, "AdvRPG" );
 
 // Sunghoon's Log
 DEFINE_LOG_CATEGORY(LogBySH);
+
+DEFINE_LOG_CATEGORY(LogByJG);

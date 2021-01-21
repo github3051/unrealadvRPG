@@ -34,7 +34,7 @@ AJGPawn::AJGPawn()
 
 	Mesh->SetAnimationMode(EAnimationMode::AnimationBlueprint);
 
-	static ConstructorHelpers::FClassFinder<UAnimInstance> Countess_Anim(TEXT("/Game/JongGyun/Animation/JGAnim_BP.JGAnim_BP"));
+	static ConstructorHelpers::FClassFinder<UAnimInstance> Countess_Anim(TEXT("/Game/JongGyun/Animation/JGAnim_BP.JGAnim_BP_C"));
 	if (Countess_Anim.Succeeded())
 	{
 		Mesh->SetAnimInstanceClass(Countess_Anim.Class);

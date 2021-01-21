@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "JGCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "JGAnimInstance.h"
+
 
 // Sets default values
 AJGCharacter::AJGCharacter()
@@ -30,7 +30,8 @@ AJGCharacter::AJGCharacter()
 
 	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
 
-	static ConstructorHelpers::FClassFinder<UAnimInstance> Countess_Anim(TEXT("/Game/JongGyun/Animation/JGAnim_BP.JGAnim_BP"));
+	//AnimBlueprint'/Game/JongGyun/Animation/JGAnim_BP.JGAnim_BP'
+	static ConstructorHelpers::FClassFinder<UAnimInstance> Countess_Anim(TEXT("/Game/JongGyun/Animation/JGAnim_BP.JGAnim_BP_C"));
 	if (Countess_Anim.Succeeded())
 	{
 		GetMesh()->SetAnimInstanceClass(Countess_Anim.Class);
@@ -42,6 +43,11 @@ AJGCharacter::AJGCharacter()
 	//ArmLengthSpeed = 3.0f;
 	//ArmRotationSpeed = 10.0f;
 	GetCharacterMovement()->JumpZVelocity = 800.0f;
+
+	IsAttacking = false;
+
+	MaxCombo = 4;
+	AttackEndComboState();
 }
 
 // Called when the game starts or when spawned
@@ -49,6 +55,26 @@ void AJGCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	
+}
+
+void AJGCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	//auto AnimInstance = Cast<UJGAnimInstance>(GetMesh()->GetAnimInstance());
+	//AnimInstance->OnMontageEnded.AddDynamic(this, &AJGCharacter::OnAttackMontageEnded);
+	JGAnim = Cast<UJGAnimInstance>(GetMesh()->GetAnimInstance());
+	JGAnim->OnMontageEnded.AddDynamic(this, &AJGCharacter::OnAttackMontageEnded);
+
+	JGAnim->OnNextAttackCheck.AddLambda([this]() -> void {
+		CanNextCombo = false;
+
+		if (IsComboInputOn)
+		{
+			AttackStartComboState();
+			JGAnim->JumpToAttackMontageSection(CurrentCombo);
+		}
+		}
+	);
 }
 
 //void AJGCharacter::SetControlMode(int32 ControlMode)
@@ -164,6 +190,7 @@ void AJGCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 //	PlayerInputComponent->BindAction(TEXT("ViewChange"), EInputEvent::IE_Pressed, this, &AJGCharacter::ViewChange);
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &AJGCharacter::Jump);
+	PlayerInputComponent->BindAction(TEXT("Attack"), EInputEvent::IE_Pressed, this, &AJGCharacter::Attack);
 
 }
 
@@ -246,3 +273,51 @@ void AJGCharacter::Turn(float NewAxisValue)
 //		break;
 //	}
 //}
+
+
+
+void AJGCharacter::Attack()
+{
+	//if (IsAttacking) return;
+
+	////auto AnimInstance = Cast<UJGAnimInstance>(GetMesh()->GetAnimInstance());
+	////if (nullptr == AnimInstance) return;
+	////AnimInstance->PlayAttackMontage();
+	//JGAnim->PlayAttackMontage();
+	//IsAttacking = true;
+	if (IsAttacking)
+	{
+		if (CanNextCombo)
+		{
+			IsComboInputOn = true;
+		}
+	}
+	else
+	{
+		AttackStartComboState();
+		JGAnim->PlayAttackMontage();
+		JGAnim->JumpToAttackMontageSection(CurrentCombo);
+		IsAttacking = true;
+	}
+}
+
+
+void AJGCharacter::OnAttackMontageEnded(UAnimMontage* Montage, bool bInterrupted)
+{
+	IsAttacking = false;
+	AttackEndComboState();
+}
+
+void AJGCharacter::AttackStartComboState()
+{
+	CanNextCombo = true;
+	IsComboInputOn = false;
+	CurrentCombo = FMath::Clamp<int32>(CurrentCombo + 1, 1, MaxCombo);
+}
+
+void AJGCharacter::AttackEndComboState()
+{
+	IsComboInputOn = false;
+	CanNextCombo = false;
+	CurrentCombo = 0;
+}
