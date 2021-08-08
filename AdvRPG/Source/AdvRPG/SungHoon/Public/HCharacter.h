@@ -2,7 +2,9 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+//#include "EngineMinimal.h"
+//#include "CoreMinimal.h"
+#include "../../AdvRPG.h"
 #include "GameFramework/SpringArmComponent.h" // for USpringArmComponent
 #include "Camera/CameraComponent.h" // for UCameraComponent
 #include "GameFramework/Character.h" // for SetupPlayerInputComponent
@@ -29,6 +31,9 @@ protected:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	// 몽타주 재생을 위한 델리게이트 함수 선언.
+	virtual void PostInitializeComponents() override;
+
 private:
 	void UpDown(float NewAxisValue);
 	void LeftRight(float NewAxisValue);
@@ -36,6 +41,7 @@ private:
 	void Turn(float NewAxisValue);
 
 	void Dodge();
+	void Attack();
 
 	/// Member Variables
 	// ※ coding standard : public 변수는 m을 붙이지 않는다.
@@ -45,4 +51,15 @@ public:
 		USpringArmComponent* SpringArm;
 	UPROPERTY(VisibleAnywhere, Category = CAMERA)
 		UCameraComponent* Camera;
+	
+	UFUNCTION()
+		void OnAttackMontageEnded(UAnimMontage* Montage, bool bInterrupted);
+
+private:
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = Attack, Meta = (AllowPrivateAccess = true))
+		bool IsAttacking;
+
+	UPROPERTY()
+		class UHAnimInstance* HAnim;
+
 };

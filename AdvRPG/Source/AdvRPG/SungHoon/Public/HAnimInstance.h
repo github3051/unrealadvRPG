@@ -2,7 +2,8 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+//#include "CoreMinimal.h"
+#include "../../AdvRPG.h"
 #include "Animation/AnimInstance.h" // for UAnimMontage & NativeUpdateAnimation
 
 #include "HAnimInstance.generated.h"
@@ -20,6 +21,7 @@ public:
 
 	// HCharacter.cpp 에서 호출예정
 	void PlayDodgeMontage();
+	void PlayAttackMontage();
 
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
@@ -31,4 +33,7 @@ private:
 	// only can see Blueprint editer (VisibleDefaultsOnly)
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Dodge, Meta = (AllowPrivateAccess = true))
 	UAnimMontage* DodgeMontage;
+
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Attack, Meta = (AllowPrivateAccess = true))
+	UAnimMontage* AttackMontage;
 };

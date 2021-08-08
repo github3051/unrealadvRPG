@@ -18,6 +18,17 @@ UHAnimInstance::UHAnimInstance()
 	{
 		DodgeMontage = DODGE_MONTAGE.Object;
 	}
+
+	// 애니메이션 몽타주 등록
+	static ConstructorHelpers::FObjectFinder<UAnimMontage> ATTACK_MONTAGE(TEXT(
+		"/Game/SungHoon/Animations/S_Countess_Skeleton_Attack_Montage.S_Countess_Skeleton_Attack_Montage"));
+	
+
+	if (ATTACK_MONTAGE.Succeeded())
+	{
+		// 애니메이션 몽타주 변수에 해당 몽타주 애니메이션 정보를 등록한다.
+		AttackMontage = ATTACK_MONTAGE.Object;
+	}
 }
 
 void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -45,5 +56,16 @@ void UHAnimInstance::PlayDodgeMontage()
 	if (!bIsInAir && !Montage_IsPlaying(DodgeMontage))
 	{
 		Montage_Play(DodgeMontage, 1.0f);
+	}
+}
+
+void UHAnimInstance::PlayAttackMontage()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Play Attack Montage"));
+	
+	// 실행중이지 않으면
+	if (!Montage_IsPlaying(AttackMontage))
+	{
+		Montage_Play(AttackMontage,1.0f);
 	}
 }

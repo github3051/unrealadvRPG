@@ -76,6 +76,22 @@ void AHCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &AHCharacter::Jump);
 	PlayerInputComponent->BindAction(TEXT("Dodge"), EInputEvent::IE_Pressed, this, &AHCharacter::Dodge);
+
+	// combo attack
+	PlayerInputComponent->BindAction(TEXT("Attack"), EInputEvent::IE_Pressed, this, &AHCharacter::Attack);
+	
+}
+
+
+void AHCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	HAnim = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
+	//HAnim->OnMontageEnded.
+	HAnim->OnMontageEnded.Add();
+	auto temp = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
+	//temp->OnMontageEnded.Add(this, &AHCharacter::OnAttackMontageEnded);
+	UE_LOG(LogTemp, Warning, TEXT("PostInitializeComponent for AHCharacter, AddDynamic"));
 }
 
 void AHCharacter::UpDown(float NewAxisValue)
@@ -105,6 +121,27 @@ void AHCharacter::Dodge()
 	UE_LOG(LogTemp, Warning, TEXT("Dodge"));
 	auto AnimInstance = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
 	if (AnimInstance == nullptr) return;
-
 	AnimInstance->PlayDodgeMontage();
+}
+
+void AHCharacter::Attack()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Attack!!!"));
+
+	/*auto AnimInstance = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
+	if (nullptr == AnimInstance) return;
+	AnimInstance->PlayAttackMontage();*/
+
+	// 이미 실행중이면 그냥 리턴
+	if (IsAttacking) return;
+
+	//UHAnim
+
+}
+
+
+void AHCharacter::OnAttackMontageEnded(UAnimMontage * Montage, bool bInterrupted)
+{
+	UE_LOG(LogTemp, Warning, TEXT("IsAttacking = false!"));
+	IsAttacking = false;
 }
